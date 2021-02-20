@@ -1,15 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Configs } from '../config/config';
-import { User } from '../models/types';
+import { User, Employee } from '../models/types';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StorageService {
 
+  public currentUser: User;
+  public employeesList: Employee[] = [];
+
   constructor() { }
 
-  getUserData(): string {
+  getUserData() {
     return JSON.parse(localStorage.getItem(Configs.USER_TOKEN)); 
   }
 

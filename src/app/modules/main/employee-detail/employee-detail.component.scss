@@ -1,0 +1,29 @@
+@import "../../../../theme/variables.scss";
+@import "../../../../theme/mixins.scss";
+
+.main-container {
+    @include displayFlexCenter();
+    width: 100%;
+    height: 100%;
+}
+.card-container {
+    width: 60%;
+    height: auto;
+}
+.card-body {
+    text-align: center;
+}
+.card-body__title {
+    width: 100%;
+    border-bottom: solid 1px $color-links;
+    margin: 0 0 10px 0;
+}
+.card-body__details {
+    @include displayFlexCenter();
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.row-button {
+    margin: 10px 0 5px 0;
+    width: 80%;
+}

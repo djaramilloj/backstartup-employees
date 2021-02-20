@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../../services/auth.service';
-import { LoginForm, SuccessLoginResponse } from '../../models/types';
-import { StorageService } from '../../services/storage.service';
-import { NgxSpinnerService } from "ngx-spinner";
+import { AuthService } from '../../../services/auth.service';
+import { StorageService } from '../../../services/storage.service';
+import { LoginForm, SuccessLoginResponse } from '../../../models/types';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -22,6 +23,7 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private authService: AuthService,
     private storageService: StorageService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -49,6 +51,7 @@ export class LoginComponent implements OnInit {
       }, 3000);
     } else {
       this.storageService.setUserData(rta.data);
+      this.router.navigateByUrl('/main/home');
     }
   }
 

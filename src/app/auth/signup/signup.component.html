@@ -1,0 +1,26 @@
+<div class="container main-container">
+    <div class="container-sm shadow p-3 mb-5 bg-white rounded signup-container">
+        <h3>Sign Up!</h3>
+        <form [formGroup] = 'signupForm' (ngSubmit) = 'onSignup()'>
+            <div class="mb-3">
+                <label class="form-label">Email address</label>
+                <input type="email" class="form-control" placeholder="name@example.com" formControlName = 'email'>
+                <small *ngIf="!signupForm.get('email').valid" class="form-text text-danger">Email is required. Make sure you use @ and .</small>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" class="form-control" formControlName = 'password'>
+                <small *ngIf="!signupForm.get('password').valid" class="form-text text-danger">Password requires minimum 8 characters, one Capital letter and one number.</small>
+            </div>
+            <div class="row-button">
+                <button [disabled]="signupForm.invalid" class="btn btn-primary signup-btn" type="submit">Sign Up!</button>
+            </div>
+        </form>
+        <div class="login-label">
+            <p class="text-start">Already have an account? 
+                <span><a routerLink="/auth/login" class="link-primary">Log in</a></span>
+            </p>
+        </div>
+    </div>
+</div>
+

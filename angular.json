@@ -29,7 +29,9 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/fonts/fonts.scss",
+              "src/theme/variables.scss"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
@@ -128,6 +130,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "backstartup-employees"
+    }
+  },
+  "defaultProject": "backstartup-employees",
+  "cli": {
+    "analytics": false
+  }
 }

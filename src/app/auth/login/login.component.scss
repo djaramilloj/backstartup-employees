@@ -1,0 +1,27 @@
+@import "../../../theme/variables.scss";
+@import "../../../theme/mixins.scss";
+
+.main-container {
+    @include displayFlexCenter();
+    width: 100%;
+    height: 100%;
+}
+.login-container {
+    @include displayFlexCenter();
+    flex-direction: column;
+    width: 30%;
+    height: 30%; 
+    padding: 20px;
+    border-radius: 8px;
+    background-color: $color-background-cards;
+    form {
+        width: 100%;
+    }
+}
+.registration-label {
+    @include displayFlexCenter();
+    flex-direction: row;
+    a {
+        cursor: pointer;
+    }
+}

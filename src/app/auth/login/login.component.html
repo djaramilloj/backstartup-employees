@@ -1,0 +1,20 @@
+<div class="container main-container">
+    <div class="container-sm shadow p-3 mb-5 bg-white rounded login-container">
+        <h3>Log in!</h3>
+        <form [formGroup] = 'loginForm' (ngSubmit) = 'onLogin()'>
+            <div class="mb-3">
+                <label class="form-label">Email address</label>
+                <input type="email" class="form-control" placeholder="name@example.com" formControlName = 'email'>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" class="form-control" formControlName = 'password'>
+            </div>
+        </form>
+        <div class="registration-label">
+            <p class="text-start">Don't have an account yet? 
+                <span><a routerLink="/auth/signup" class="link-primary">Sign up</a></span>
+            </p>
+        </div>
+    </div>
+</div>

@@ -5,16 +5,17 @@
             <div class="mb-3">
                 <label class="form-label">Email address</label>
                 <input type="email" class="form-control" placeholder="name@example.com" formControlName = 'email'>
+                <small *ngIf="!loginForm.get('email').valid" class="form-text text-danger">Email is required. Make sure you use @ and .</small>
             </div>
             <div class="mb-3">
                 <label class="form-label">Password</label>
                 <input type="password" class="form-control" formControlName = 'password'>
+                <small *ngIf="!loginForm.get('password').valid" class="form-text text-danger">Password requires minimum 8 characters, one Capital letter and one number.</small>
+                <small class="form-text text-danger" *ngIf="loginError">{{ loginErrorMessage }}</small>
+            </div>
+            <div class="row-button">
+                <button [disabled]="loginForm.invalid" class="btn btn-primary signup-btn" type="submit">Log In!</button>
             </div>
         </form>
-        <div class="registration-label">
-            <p class="text-start">Don't have an account yet? 
-                <span><a routerLink="/auth/signup" class="link-primary">Sign up</a></span>
-            </p>
-        </div>
     </div>
 </div>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { LoginRegisterForm, SuccessResponse } from '../models/types';
-import { USERS_CREDENTIALS_AUTH } from '../utils/USER_AUTH_MOCK';
+import { LoginForm, SuccessLoginResponse, User } from '../models/types';
+import { USER_AUTH_MOCK } from '../utils/USER_AUTH_MOCK';
 
 @Injectable({
   providedIn: 'root'
@@ -9,9 +9,25 @@ export class AuthService {
 
   constructor() { }
 
-  registerUser(data: LoginRegisterForm): SuccessResponse {
-    let response: SuccessResponse = {error: false, message: 'User registered successfully'};
-    USERS_CREDENTIALS_AUTH.push(data);
-    return response;
+  async logIn(data: LoginForm): Promise< SuccessLoginResponse > {
+    let response: SuccessLoginResponse;
+    const resultUser: User[] = USER_AUTH_MOCK.filter(item => {
+      if (data.email === item.email && data.password === item.password) {
+        return item;
+      }
+    })
+    if (resultUser.length === 1) {
+      return response = {
+        error: false,
+        message: "User logged in successfully",
+        data: resultUser[0]
+      }
+    } else {
+      return response = {
+        error: true,
+        message: "Incorrect email or password",
+        data: null
+      }
+    }
   }
 }

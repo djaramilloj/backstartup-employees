@@ -1,5 +1,16 @@
-import { LoginRegisterForm } from "../models/types";
+import { User } from "../models/types";
 
-export const USERS_CREDENTIALS_AUTH: LoginRegisterForm[] = [
-
+export const USER_AUTH_MOCK: User[] = [
+    {
+        email: "juan@gmail.com",
+        password: "Hola1234",
+        name: "Juan David Jaramillo",
+        admin: true
+    },
+    {
+        email: "pedro@gmail.com",
+        password: "Hola1234",
+        name: "Pedro Perez",
+        admin: false
+    }
 ]

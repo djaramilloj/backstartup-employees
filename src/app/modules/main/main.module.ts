@@ -8,10 +8,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, EmployeesComponent, EmployeeDetailComponent],
+  declarations: [
+    HomeComponent, 
+    EmployeesComponent, 
+    EmployeeDetailComponent, 
+    AboutUsComponent
+  ],
   imports: [
     CommonModule,
     MainRoutingModule,

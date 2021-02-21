@@ -1,10 +1,64 @@
 <div class="main-container">
-    <div class="card">
-        <div class="card-body">
+    <div class="card card-container" *ngFor="let statistic of statisticsList">
+        <div class="card-body" *ngIf="statistic.onlyAdmin" admin>
             <div class="card-body__title">
-                <h3 class="card-title">Older Employee</h3>
+                <h5 class="card-title">{{ statistic.name | titlecase }}</h5>
+                <img [src]="statistic.icon" alt="statistic icon">
             </div>
-            <h6 class="card-text fs-5 fw-bold">Test</h6>
+            <div 
+                class="value-info" 
+                *ngIf="statistic.value">
+                <h6 class="fs-5 fw-bold text-primary">Value:</h6>
+                <p>{{ statistic.value | currency:'USD' }}</p>
+            </div>
+            <div 
+                class="user-info" 
+                *ngIf="statistic.employee">
+                <div class="user-info__details">
+                    <h6 class="fs-5 fw-bold text-primary">Name:</h6>
+                    <p>{{ statistic.employee.employee_name }}</p>
+                </div>
+                <div class="user-info__details">
+                    <h6 class="fs-5 fw-bold text-primary">Salary:</h6>
+                    <p>{{ statistic.employee.employee_salary | currency:'USD'}}</p>
+                </div>
+                <div class="user-info__details">
+                    <h6 class="fs-5 fw-bold text-primary">Age:</h6>
+                    <p>{{ statistic.employee.employee_age }}</p>
+                </div>
+            </div>
         </div>
+        <div class="card-body" *ngIf="!statistic.onlyAdmin">
+            <div class="card-body__title">
+                <h5 class="card-title">{{ statistic.name | titlecase }}</h5>
+                <img [src]="statistic.icon" alt="statistic icon">
+            </div>
+            <div 
+                class="value-info" 
+                *ngIf="statistic.value">
+                <h6 class="fs-5 fw-bold text-primary">Value:</h6>
+                <p>{{ statistic.value | currency:'USD' }}</p>
+            </div>
+            <div 
+                class="user-info" 
+                *ngIf="statistic.employee">
+                <div class="user-info__details">
+                    <h6 class="fs-5 fw-bold text-primary">Name:</h6>
+                    <p>{{ statistic.employee.employee_name }}</p>
+                </div>
+                <div class="user-info__details">
+                    <h6 class="fs-5 fw-bold text-primary">Salary:</h6>
+                    <p>{{ statistic.employee.employee_salary | currency:'USD'}}</p>
+                </div>
+                <div class="user-info__details">
+                    <h6 class="fs-5 fw-bold text-primary">Age:</h6>
+                    <p>{{ statistic.employee.employee_age }}</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
     </div>
 </div>

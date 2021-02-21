@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
       password: this.loginForm.get('password').value
     }
     const rta: SuccessLoginResponse = await this.authService.logIn(data);
-    if (rta.error) {
+    if (rta.error && rta.message !== "User logged in successfully") {
       this.loginError = true;
       setTimeout(() => {
         this.loginError = false;
@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
       }, 3000);
     } else {
       this.storageService.setUserData(rta.data);
-      this.router.navigateByUrl('/main/home');
+      this.router.navigate(['/main/home']);
     }
   }
 

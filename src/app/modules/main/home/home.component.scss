@@ -1,0 +1,84 @@
+@import "../../../../theme/variables.scss";
+@import "../../../../theme/mixins.scss";
+
+.main-container {
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+}
+.statistics-overview {
+    @include displayFlexCenter();
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    height: 40%;
+    padding: 30px;
+    background-color: $color-links;
+    border-radius: 8px;
+    margin: 0 0 40px 0;
+    @media only screen and (min-width: 1px) and (max-width: $size-mobile) {
+        .big-header {
+            display: none;
+        }
+    }
+}
+.statistics-overview__sub {
+    display: inherit;
+    @media only screen and (min-width: 1px) and (max-width: $size-mobile) {
+        flex-direction: column;
+        align-items: center;
+        .button-color__mobile {
+            background-color: $color-blue-dark;
+            color: white;
+        }
+    }
+    @media only screen and (min-width: $size-mobile) {
+        flex-direction: row;
+        .button-color__mobile {
+            display: none;
+        }
+    }
+    justify-content: space-between;
+    width: 100%;
+    margin: 15px 0 0 0;
+}
+.statistics-overview__title {
+    display: inherit;
+    flex-direction: column;
+    @media only screen and (min-width: 1px) and (max-width: $size-mobile) {
+        text-align: center;
+        h5 {
+            margin-bottom: 15px;
+        }
+        .button-color {
+            display: none;
+        }
+    }
+    @media only screen and (min-width: $size-mobile) {
+        .button-color {
+            background-color: $color-blue-dark;
+            color: white;
+        }
+    }
+    img {
+        width: 40px;
+        height: 40px;
+    }
+}
+.statistics-overview__details {
+    display: inherit;
+    @media only screen and (min-width: 1px) and (max-width: $size-mobile) {
+        overflow-x: auto;
+    }
+    flex-direction: row-reverse;
+    .user-info__details {
+        display: inherit;
+        flex-direction: column;
+        margin: 0 10px;
+    }
+}
+.employees-overview {
+    .table-row {
+        cursor: pointer;
+    }
+}

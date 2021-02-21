@@ -20,4 +20,8 @@ export class StorageService {
     localStorage.removeItem(Configs.USER_TOKEN);
     localStorage.setItem(Configs.USER_TOKEN, JSON.stringify(data));
   }
+
+  deleteUserData() {
+    localStorage.removeItem(Configs.USER_TOKEN);
+  }
 }

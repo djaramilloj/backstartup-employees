@@ -1,3 +1,6 @@
+@import "../../../../theme/variables.scss";
+@import "../../../../theme/mixins.scss";
+
 #wrapper {
     overflow-x: hidden;
  }
@@ -28,7 +31,7 @@
   margin-left: 0;
 }
 
-@media (min-width: 768px) {
+@media (min-width: $size-mobile) {
   #sidebar-wrapper {
     margin-left: 0;
   }
@@ -45,4 +48,13 @@
 .icon-style {
     width: 40px;
     height: 40px;
+    cursor: pointer;
+}
+.logout-button {
+  cursor: pointer;
+}
+.logout-menuitem {
+  @media only screen and (min-width: $size-mobile) {
+      display: none;
+  }
 }

@@ -15,7 +15,7 @@
                 <th (click)="goDetails(empl)" class="table-row" scope="row">{{empl.id}}</th>
                 <td (click)="goDetails(empl)" class="table-row">{{empl.employee_name}}</td>
                 <td (click)="goDetails(empl)" class="table-row">{{empl.employee_age}}</td>
-                <td (click)="goDetails(empl)" class="table-row">{{empl.employee_salary}}</td>
+                <td (click)="goDetails(empl)" class="table-row">{{empl.employee_salary | currency:'USD'}}</td>
                 <td>
                     <svg 
                     id="delete-icon"

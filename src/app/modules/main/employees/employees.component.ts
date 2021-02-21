@@ -28,8 +28,12 @@ export class EmployeesComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.spinner.show();
-    this.getEmployees();
+    if (this.storageService.employeesList.length === 0) {
+      this.spinner.show();
+      this.getEmployees();
+    } else {
+      this.employeesList = this.storageService.employeesList;
+    }
     this.employeeForm = this.createFormGroup();
   }
 
@@ -42,7 +46,7 @@ export class EmployeesComponent implements OnInit {
     }); 
   }
 
-  async getEmployees() {
+  private async getEmployees() {
     const rta: any = await this.httpService.getEmployees().toPromise(); 
     if (rta.status === 'success') {
       this.employeesList = rta.data.map(item => {

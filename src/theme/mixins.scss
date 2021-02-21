@@ -3,3 +3,15 @@
     justify-content: center;
     align-items: center; 
 }
+
+@mixin displayFlexCards() {
+    @include displayFlexCenter();
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+@mixin displayFlexCardsMobile() {
+    @include displayFlexCenter();
+    flex-direction: column;
+    overflow-y: auto;
+}

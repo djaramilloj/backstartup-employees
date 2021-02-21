@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Configs } from '../config/config';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Employee } from '../models/types';
 
 @Injectable({
